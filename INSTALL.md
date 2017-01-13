@@ -363,3 +363,40 @@ operates.
 `configure' also accepts some other, not widely useful, options.  Run
 `configure --help' for more details.
 
+Building with CMake
+===================
+
+  CMake 3.0 or later is required for this build. The rest of the
+instructions assume CMake is properly installed and is accessible from
+the terminal shell.
+
+Make sure the following dependencies are also meant:
+
+ - Lua 5.1+ runtime and headers
+ - OpenSSL 0.9.7+ 
+
+  As per CMake guidelines, an out-of-source build is recommended. From
+Luacrypto's root working directory, generate the build files and run make
+to start the build.
+
+For instance, to build using mingw64 toolchain under Windows
+
+    cmake -G "MinGW Makefiles" -B./build -H.
+    cd ./build
+    mingw32-make VERBOSE=1
+
+The path in `-B./build` is the target directory to use for generating the
+out-of-source build files; replace with a different path if a different
+location is desired.
+
+Setting Dependency Paths for CMake
+==================================
+
+  If you need CMake to use a particular path location for dependencies define
+`CMAKE_PREFIX_PATH` to the paths to search for, use `;` as the delimiter to
+separate multiple paths. For example
+
+    cmake -DCMAKE_PREFIX_PATH="G:/lua-5.3.3;G:/openssl-1.0.1g" -G "MinGW Makefiles" -B./build -H.
+
+This will look for the Lua runtime and headers in 'G:/lua-5.3.3' and
+OpenSSL in 'G:/openssl-1.0.1g'.
