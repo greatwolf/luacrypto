@@ -5,7 +5,7 @@
 # Please note that the package source code is licensed under its own license.
 
 project ( luacrypto C )
-cmake_minimum_required ( VERSION 2.6 )
+cmake_minimum_required ( VERSION 3.0 )
 include ( dist.cmake )
 
 # Find libraries

@@ -88,7 +88,7 @@ macro ( install_lua_executable _name _source )
   if ( NOT SKIP_LUA_WRAPPER )
     enable_language ( C )
   
-    find_package ( Lua51 REQUIRED )
+    find_package ( Lua 5.1 REQUIRED )
     include_directories ( ${LUA_INCLUDE_DIR} )
 
     set ( _wrapper ${CMAKE_CURRENT_BINARY_DIR}/${_name}.c )
@@ -353,7 +353,7 @@ macro (install_lua_module _name )
      get_filename_component ( _module_name ${_bin_module} NAME_WE )
      get_filename_component ( _module_path ${_bin_module} PATH )
      
-     find_package ( Lua51 REQUIRED )
+     find_package ( Lua 5.1 REQUIRED )
      include_directories ( ${LUA_INCLUDE_DIR} )
    
      add_library( ${_target} MODULE ${_MODULE_DEFAULT_ARGS})
