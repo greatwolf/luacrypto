@@ -2099,7 +2099,7 @@ LUACRYPTO_API void luacrypto_set_info (lua_State *L)
     lua_pushliteral (L, "LuaCrypto is a Lua wrapper for OpenSSL");
     lua_settable (L, -3);
     lua_pushliteral (L, "_VERSION");
-    lua_pushliteral (L, "LuaCrypto 0.3.1");
+    lua_pushliteral (L, "LuaCrypto 0.3.2");
     lua_settable (L, -3);
 }
 
