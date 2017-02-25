@@ -45,6 +45,11 @@ static void luaL_register (lua_State *L, const char *libname, const luaL_Reg *l)
 
 #endif
 
+#if LUA_VERSION_NUM >= 503
+#define luaL_checkint luaL_checkinteger
+#endif
+
+
 static void luacrypto_register_submodule(lua_State *L, const char *libname, const luaL_Reg *l)
 {
     int top = lua_gettop(L);
@@ -1724,6 +1729,7 @@ static X509 *x509__x509_from_string(const char *pem)
     if (cert == NULL)
         goto error;
 
+    BIO_free(mem);
     return cert;
 
 error:
