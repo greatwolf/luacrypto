@@ -16,7 +16,7 @@ external_dependencies = {
 	}
 }
 source = {
-	url = "https://github.com/mkottman/luacrypto/archive/master.zip",
+	url = "https://github.com/greatwolf/luacrypto/archive/master.zip",
 	dir = "luacrypto-master",
 }
 build = {
